@@ -540,7 +540,7 @@ ShowAllEmployees proc
     ; Display employee details
     xor   cx, cx            ; Clear cx for empCount
     mov   cl, empCount      
-    xor   bp, bp            ; Reset bp for serial number counter
+    xor   bp, bp            ; Reset bp for serial number counter BP points to the base of the stack
     inc   bp                ; Start serial number from 1
 
     mov   si, offset empNames
