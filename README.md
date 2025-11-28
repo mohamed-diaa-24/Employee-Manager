@@ -34,7 +34,7 @@ This project is a simple **Employee Management** application built using **8086 
 
 2. **Clone the Repository**:
    ```bash
-   git remote https://github.com/mohamed-diaa-24/Employee-Manager.git
+   git clone https://github.com/mohamed-diaa-24/Employee-Manager.git
    ```
    or
    <br/>
