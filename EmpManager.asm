@@ -84,7 +84,7 @@
     phoneHeader      db "Phone$"
     
 .code
-main proc
+main proc 
     mov   ax, @data
     mov   ds, ax
 
@@ -116,7 +116,7 @@ DisplayLoginPage proc
     mov si, offset inUsername
 InputUsername:
     mov ah, 1
-    int 21h
+    int 21h 
     cmp al, 13      ; Comapare with Enter key
     je DoneUsername
     mov [si], al
@@ -157,8 +157,8 @@ ValidateLogin proc
     mov di, offset inUsername
     mov cx, 5
 LoginValidationUsername:
-    mov bl, [si]
-    mov dl, [di]
+    mov bl, [si]  ; a d m i n
+    mov dl, [di]  ; a d m i n
     cmp bl, dl
     jne InvalidLogin
     inc si
@@ -281,7 +281,12 @@ DisplayMainMenu proc
     
     cmp   al, '5'
     je    ExitProgram
-
+    
+    call NL       
+    mov ah ,9
+    lea dx , invalidOptionMsg
+    int 21h           
+    
     jmp   DisplayMainMenu
 DisplayMainMenu endp
 
@@ -550,13 +555,13 @@ ShowAllEmployees proc
 
     DisplayLoop:     
     ; Display serial number
-    mov   ax, bp    
+    mov   ax, bp  
     mov   dl, al    
     add   dl, '0'   ; Convert to Decimal -> ASCII
     mov   ah, 2     
     int   21h
     
-    mov   ah, 9
+    mov   ah, 9 
     lea   dx, tab      
     int   21h
 
