@@ -1,8 +1,7 @@
 .model small
 .stack 100h
 .data
-    ; Utilities
-    newLine          db 10, 13, "$" ; Newline
+    newLine          db 10, 13, "$" 
 
     ; Login Page
     l1 db 13, 10, "**************************************************$" 
@@ -546,7 +545,7 @@ ShowAllEmployees proc
     ; Display employee details
     xor   cx, cx            ; Clear cx for empCount
     mov   cl, empCount      
-    xor   bp, bp            ; Reset bp for serial number counter
+    xor   bp, bp            ; Reset bp for serial number counter BP points to the base of the stack
     inc   bp                ; Start serial number from 1
 
     mov   si, offset empNames
